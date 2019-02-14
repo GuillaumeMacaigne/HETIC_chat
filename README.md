@@ -9,5 +9,8 @@ Mise en place d'une application de chat (chatbot)
 - Configurer le fichier serveur :
     - Créer une constante pour les imports (attention à dotenv - configuration particulière -)
     - Créer une constante pour le serveur (utilisation de la fonction express())
+    - Créer le fichier .env avec le port
     - Configurer les composants
     - Lancer le serveur
+- Créer .gitignore: .env & node_modules/
+- Remplacer node dans start dans package.json par nodemon
