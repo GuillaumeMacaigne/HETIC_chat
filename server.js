@@ -5,7 +5,7 @@ Imports
     require('dotenv').config(); //C'était ça la configuration particulière
     const express = require('express');
     const path = require('path');
-    const bodyParser = require('body-parser'); //Récupérer des données dans les requêtes
+    const bodyParser = require('body-parser'); //Permet de récupérer des données dans les requêtes
     const ejs = require('ejs');
 
     //inner
@@ -28,6 +28,9 @@ Configuration
 
             // Config du moteur de rendu
             server.set( 'view engine', 'ejs' );
+
+            // Body-parser
+            server.use(bodyParser.urlencoded({ extended: false }))
 
             //Configurer les routes server
             server.use('/', mainRouter);

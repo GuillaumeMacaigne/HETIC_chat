@@ -25,3 +25,46 @@
 
     <button type="submit">Inscription</button>
 </form>
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+
+        //Variables
+        const email = document.querySelector('#email');
+        const pseudo = document.querySelector('#pseudo');
+        const password = document.querySelector('#password');
+        const passwordSecure = document.querySelector('#password-secure');
+        const conditions = document.querySelector('#conditions');
+
+
+        //capter la soumission du formulaire
+        document.querySelector('form').addEventListener('submit', (event) => {
+            //bloquer le comportement naturel du formulaire
+            event.preventDefault();
+
+            // Variable
+            let formError = 0;
+
+            // Vérifier les champs du formulaire
+            /*
+            if( email.value.length <= 4 ){
+                formError++;
+            };
+            */
+            if( email.value.length <= 4) formError++;
+            if( pseudo.value.length <= 1) formError++;
+            if( password.value.length <= 4) formError++;
+            if( password.value !== passwordSecure.value ) formError++;
+            if( !conditions ) formError++;
+
+            // Validation finale
+            if( formError === 0 ){
+                console.log("Well done");
+            }
+
+
+        })
+    })
+
+</script>
