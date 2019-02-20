@@ -48,5 +48,5 @@ Configuration
 /*
 Démarrer le serveur
 */
-    new ServerClass().init();
+    new ServerClass().init(); //On instancie la classe
 //
